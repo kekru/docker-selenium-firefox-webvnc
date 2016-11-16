@@ -2,17 +2,23 @@
 This is a Seleniumserver with a Firefox webbrowser, which you can watch via an integrated VNC viewer ([noVNC](https://github.com/kanaka/noVNC)).  
 The Dockerimage is based on [selenium/standalone-firefox-debug](https://hub.docker.com/r/selenium/standalone-firefox-debug/).  
 
-# Start the container  
+## Start the container  
 Run the container with `docker run --name myselenium -d -p 80:80 -p 4444:4444 whiledo/selenium-firefox-webvnc`.  
-You can access the seleniumservice via `http://server:4444/wd/hub` or via `http://server:80/wd/hub`.
+`-p 4444:4444` is optional, because you can reach selenium also via port 80.  
+So the command can be shortened to `docker run --name myselenium -d -p 80:80 whiledo/selenium-firefox-webvnc`.  
+
+## Access selenium
+You can access the seleniumservice via `http://server:4444/wd/hub` or via `http://server:80/wd/hub`.  
+
+## View the firefox  
 On `http://server:80/` you'll find the noVNC VNC viewer, that lets you look inside the container and see the firefox in action.
 
-# Define screen resolution  
+## Define screen resolution  
 To define the screen size pass the SCREEN_WIDTH	and SCREEN_HEIGHT environment variables to the run command.  
 For example: `docker run --name myselenium -d -p 80:80 -p 4444:4444 -e SCREEN_WIDTH=1024 -e SCREEN_HEIGHT=768 whiledo/selenium-firefox-webvnc`  
 Default screen size is SCREEN_WIDTH=1920 and SCREEN_HEIGHT=1080.
 
-# Set timezone  
+## Set timezone  
 If you need a special timezone, create a Dockerfile like the following and replace Europe/Berlin with your Timezone.    
 ```bash
 FROM whiledo/selenium-firefox-webvnc
