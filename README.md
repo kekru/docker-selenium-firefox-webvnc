@@ -4,8 +4,8 @@ The Dockerimage is based on [selenium/standalone-firefox-debug](https://hub.dock
 
 # Start the container  
 Run the container with `docker run --name myselenium -d -p 80:80 -p 4444:4444 whiledo/selenium-firefox-webvnc`.  
-You can access the seleniumservice via port 4444 (http).  
-On port 80 (http) you'll find the noVNC VNC viewer, that lets you look inside the container and see the firefox in action.
+You can access the seleniumservice via `http://server:4444/wd/hub` or via `http://server:80/wd/hub`.
+On `http://server:80/` you'll find the noVNC VNC viewer, that lets you look inside the container and see the firefox in action.
 
 # Define screen resolution  
 To define the screen size pass the SCREEN_WIDTH	and SCREEN_HEIGHT environment variables to the run command.  
