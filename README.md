@@ -12,7 +12,7 @@ To define the screen size pass the SCREEN_WIDTH	and SCREEN_HEIGHT environment va
 For example: `docker run --name myselenium -d -p 80:80 -p 4444:4444 -e SCREEN_WIDTH=1024 -e SCREEN_HEIGHT=768 whiledo/selenium-firefox-webvnc`  
 Default screen size is SCREEN_WIDTH=1920 and SCREEN_HEIGHT=1080.
 
-# Set Timezone  
+# Set timezone  
 If you need a special timezone, create a Dockerfile like the following and replace Europe/Berlin with your Timezone.    
 ```bash
 FROM whiledo/selenium-firefox-webvnc
