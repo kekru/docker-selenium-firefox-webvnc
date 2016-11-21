@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -y nginx git \
  && git clone https://github.com/kanaka/noVNC.git \
 
  && sed -i "s|WebUtil.getConfigVar('password', '');|'secret';|g" /usr/share/nginx/html/noVNC/vnc_auto.html
+
+RUN rm /etc/nginx/sites-enabled/default
 ADD nginx.conf /etc/nginx/conf.d/default.conf
 
 ENV SCREEN_WIDTH=1920 \
