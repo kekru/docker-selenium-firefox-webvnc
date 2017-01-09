@@ -1,4 +1,4 @@
-FROM selenium/standalone-firefox-debug:3.0.1-aluminum
+FROM selenium/standalone-firefox-debug:3.0.1-erbium
 MAINTAINER Kevin Krummenauer <kevin@whiledo.de>
 
 RUN apt-get update && apt-get install -y nginx git \
